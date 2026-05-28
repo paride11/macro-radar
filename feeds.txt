@@ -1,0 +1,8 @@
+https://www.ecb.europa.eu/rss/press.html
+https://www.federalreserve.gov/feeds/press_all.xml
+https://www.bankofengland.co.uk/rss/news
+https://www.boj.or.jp/en/rss/whatsnew.xml
+https://www.imf.org/en/News/rss
+https://www.bis.org/rss/index.htm
+https://www.oecd.org/newsroom/rss.xml
+https://www.ecb.europa.eu/rss/research.html
