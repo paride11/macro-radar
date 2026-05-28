@@ -41,25 +41,35 @@ SECTION_RULES = {
     ],
     "us_policy": [
         "white house", "congress", "senate", "house of representatives",
-        "us treasury", "treasury department", "debt ceiling", "tariff",
+        "us treasury", "treasury department", "treasury", "ustr",
+        "united states trade representative", "debt ceiling", "tariff",
         "tariffs", "budget", "deficit", "fiscal", "sanctions",
-        "government shutdown", "tax bill"
+        "government shutdown", "tax bill", "public debt", "auction",
+        "trade representative", "export controls", "section 301",
+        "chips", "critical minerals"
     ],
     "europe_policy": [
-        "european commission", "european council", "eurogroup",
-        "ecofin", "eu fiscal rules", "stability and growth pact",
+        "european commission", "european council", "european parliament",
+        "eurogroup", "ecofin", "eu fiscal rules", "stability and growth pact",
         "germany budget", "france budget", "italy budget",
-        "sanctions", "energy policy", "defence spending", "defense spending"
+        "sanctions", "energy policy", "defence spending", "defense spending",
+        "state aid", "single market", "industrial policy", "green deal",
+        "trade defence", "trade defense", "critical raw materials",
+        "ukraine facility", "enlargement", "migration pact"
     ],
     "global_geopolitics": [
         "china", "taiwan", "south china sea", "yuan", "renminbi",
+        "beijing", "hong kong", "semiconductor", "export controls",
         "iran", "israel", "gaza", "red sea", "houthi", "houthis",
-        "saudi", "opec", "strait of hormuz", "oil supply", "gulf",
+        "saudi", "opec", "opec+", "strait of hormuz", "oil supply",
+        "gulf", "qatar", "uae", "iraq", "syria", "lebanon",
         "russia", "ukraine", "black sea", "russian oil", "russian gas",
-        "grain corridor", "suez", "panama canal", "shipping", "freight",
-        "supply chain", "argentina", "turkey", "brazil", "mexico",
-        "south africa", "india", "indonesia", "imf program",
-        "capital controls", "sovereign debt"
+        "grain corridor", "sanctions", "suez", "panama canal",
+        "shipping", "freight", "supply chain", "supply chains",
+        "argentina", "turkey", "brazil", "mexico", "south africa",
+        "india", "indonesia", "imf program", "capital controls",
+        "sovereign debt", "default", "currency crisis", "food security",
+        "nuclear", "iaea", "uranium", "energy security"
     ],
 }
 
@@ -97,7 +107,10 @@ SIGNAL_RULES = {
     "geopolitical_macro": [
         "oil", "gas", "energy", "shipping", "freight", "sanctions",
         "tariffs", "trade", "supply chain", "supply chains", "fx",
-        "currency", "risk premium", "safe haven", "commodities"
+        "currency", "risk premium", "safe haven", "commodities",
+        "inflation", "food prices", "grain", "nuclear", "uranium",
+        "export controls", "critical minerals", "semiconductors",
+        "capital flows", "sovereign", "debt", "default"
     ],
     "market_plumbing": [
         "payments", "settlement", "clearing", "collateral", "repo",
@@ -661,9 +674,6 @@ def build_email_body(articles):
     body.extend(build_boe_boj_section(articles))
     body.extend(build_policy_section(articles))
     body.extend(build_global_geopolitics_section(articles))
-    body.extend(build_signal_vs_noise(articles))
-    body.extend(build_what_to_watch_next(articles))
-
     body.append("## Method note")
     body.append("")
     body.append(
